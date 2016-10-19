@@ -24,7 +24,7 @@ post '/roll' do
   }.to_json
 end
 
-post '/emote' do
+post '/rp' do
   user = params[:user_name]
   text = params[:text]
 
