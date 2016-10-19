@@ -23,3 +23,14 @@ post '/roll' do
     text: "*#{user}* rolled: *#{rolls.inject(0, :+)}* [#{rolls.join(" + ")}]"
   }.to_json
 end
+
+post '/emote' do
+  user = params[:user_name]
+  text = params[:text]
+
+  content_type :json
+  {
+    response_type: "in_channel",
+    text: "*#{user}* #{text}"
+  }.to_json
+end
